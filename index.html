@@ -1,27 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Projeto-Gabriel Men</title>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Projeto Jogo - Gabriel Men</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="header-container">
-            <div class="header-logo">
-                <img src="https://via.placeholder.com/150x50" alt="Logo">
+    <div id="tela-home">
+        <header class="main-header">
+            <div class="header-container">
+                <div class="header-logo">
+                    <div class="logo-placeholder">LOGO</div>
+                </div>
+                <nav class="header-nav">
+                    <button class="nav-btn" onclick="scrollToSection('hero')">Início</button>
+                    <button class="nav-btn" onclick="scrollToSection('hands-on')">Hands On</button>
+                    <button class="nav-btn" onclick="scrollToSection('personagens')">Personagens</button>
+                    <button class="nav-btn" onclick="abrirFeedback()">Feedback</button>
+                </nav>
             </div>
+        </header>
 
-            <nav class="header-nav">
-                <button class="nav-btn">Início</button>
-                <button class="nav-btn">Serviços</button>
-                <button class="nav-btn">Sobre</button>
-                <button class="nav-btn">Contato</button>
-            </nav>
+        <main>
+            <section id="hero" class="section">
+                <div class="hero-content">
+                    <div class="hero-image-placeholder">Imagem Principal / Banner</div>
+                    <div class="hero-text">
+                        <h1>Título Incrível do Jogo</h1>
+                        <p>Descrição curta sobre o que o jogador vai encontrar.</p>
+                        <button id="btn-jogar-agora" class="btn-primary">JOGAR AGORA</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="hands-on" class="section bg-light">
+                <h2>Hands On</h2>
+                <div class="carousel-container">
+                    <button id="btn-prev" class="carousel-btn">❮</button>
+                    <div class="carousel-content">
+                        <div id="carousel-img" class="box-placeholder">Imagem Hands On</div>
+                        <div class="carousel-text">
+                            <h3 id="carousel-title">Característica 1</h3>
+                            <p id="carousel-desc">Texto explicativo da imagem atual. A cada clique, este texto e a imagem mudam.</p>
+                        </div>
+                    </div>
+                    <button id="btn-next" class="carousel-btn">❯</button>
+                </div>
+            </section>
+
+            <section id="personagens" class="section">
+                <h2>Personagens</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="box-placeholder square"></div>
+                        <h3>Personagem 1</h3>
+                        <p>Descrição do personagem.</p>
+                    </div>
+                    <div class="card">
+                        <div class="box-placeholder square"></div>
+                        <h3>Personagem 2</h3>
+                        <p>Descrição do personagem.</p>
+                    </div>
+                    <div class="card">
+                        <div class="box-placeholder square"></div>
+                        <h3>Personagem 3</h3>
+                        <p>Descrição do personagem.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="avaliacoes" class="section bg-light">
+                <h2>Avaliações</h2>
+                <div class="grid-3">
+                    <div class="review-card">
+                        <div class="avatar"></div>
+                        <p>"Muito bom, recomendo demais!"</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="avatar"></div>
+                        <p>"Jogabilidade incrível."</p>
+                        <div class="stars">★★★★☆</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="avatar"></div>
+                        <p>"Amei os personagens."</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="tela-jogo" style="display: none;">
+        <header class="main-header">
+            <div class="header-container">
+                <h2>Área do Jogo</h2>
+                <button class="btn-secondary" onclick="voltarParaHome()">Voltar para Home</button>
+            </div>
+        </header>
+        <div class="game-container">
+            <div class="game-screen">
+                <h2>PLAY</h2>
+                <p>(Aqui entra o iframe ou canvas do jogo)</p>
+            </div>
+            <div class="game-controls">
+                <h3>Controles</h3>
+                <div class="controls-layout">
+                    <div class="d-pad-placeholder">🕹️ Use as setas ou W A S D</div>
+                    <ul class="controls-list">
+                        <li><strong>Espaço:</strong> Pular</li>
+                        <li><strong>Enter:</strong> Confirmar</li>
+                        <li><strong>ESC:</strong> Pausa</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </header>
+    </div>
+
+    <div id="modal-cadastro" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal('modal-cadastro')">&times;</span>
+            <h2>Quem é você?</h2>
+            <form id="form-cadastro">
+                <input type="text" placeholder="Nome" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="WhatsApp" required>
+                <button type="submit" class="btn-primary w-100">JOGAR</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-feedback" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal('modal-feedback')">&times;</span>
+            <h2>Deixe seu Feedback</h2>
+            <form id="form-feedback">
+                <input type="text" placeholder="Assunto" required>
+                <textarea rows="4" placeholder="Sua mensagem..." required></textarea>
+                <button type="submit" class="btn-primary w-100">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>

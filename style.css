@@ -1,44 +1,321 @@
-/* Reset básico para tirar margens padrão */
+/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
 }
 
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
 .main-header {
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    align-items: center; /* Alinha verticalmente no centro */
-    justify-content: space-between; /* Empurra os itens para as extremidades */
+    align-items: center;
+    justify-content: space-between;
 }
 
-.header-logo img {
-    height: 40px; /* Ajuste a altura da sua foto aqui */
-    display: block;
+.logo-placeholder {
+    width: 120px;
+    height: 40px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #666;
+    border: 1px dashed #999;
 }
 
 .header-nav {
     display: flex;
-    gap: 15px; /* Espaçamento entre os botões */
+    gap: 15px;
 }
 
 .nav-btn {
     padding: 8px 16px;
     border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
+    background-color: transparent;
+    color: #333;
+    font-weight: bold;
     cursor: pointer;
+    transition: color 0.3s;
 }
 
 .nav-btn:hover {
-    background-color: #0056b3;
+    color: #007bff;
+}
+
+/* Botões Globais */
+.btn-primary {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #c62828;
+}
+
+.btn-secondary {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.w-100 {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Seções */
+.section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg-light {
+    background-color: #ececec;
+    max-width: 100%;
+    padding: 60px 10%;
+}
+
+h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 28px;
+}
+
+/* Hero */
+.hero-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-image-placeholder {
+    flex: 1;
+    height: 300px;
+    background-color: #ddd;
+    border: 2px dashed #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Placeholders genéricos (Rascunhos) */
+.box-placeholder {
+    background-color: #ddd;
+    border: 2px dashed #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+.square {
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+/* Carousel (Hands On) */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.carousel-content {
+    display: flex;
+    flex: 1;
+    gap: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.carousel-content .box-placeholder {
+    flex: 1;
+    height: 250px;
+}
+
+.carousel-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-btn {
+    background: #333;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Grids (Personagens e Avaliação) */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.review-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+}
+
+.stars {
+    color: #ffc107;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* Modais */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Tela do Jogo */
+.game-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.game-screen {
+    background-color: #222;
+    color: white;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.controls-layout {
+    display: flex;
+    gap: 40px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.d-pad-placeholder {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.controls-list {
+    flex: 1;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
 }
