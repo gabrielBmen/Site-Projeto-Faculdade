@@ -1,149 +1,191 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Jogo - Gabriel Men</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site do Jogo</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="tela-home">
-        <header class="main-header">
-            <div class="header-container">
-                <div class="header-logo">
-                    <div class="logo-placeholder">LOGO</div>
-                </div>
-                <nav class="header-nav">
-                    <button class="nav-btn" onclick="scrollToSection('hero')">Início</button>
-                    <button class="nav-btn" onclick="scrollToSection('hands-on')">Hands On</button>
-                    <button class="nav-btn" onclick="scrollToSection('personagens')">Personagens</button>
-                    <button class="nav-btn" onclick="abrirFeedback()">Feedback</button>
-                </nav>
-            </div>
-        </header>
-
-        <main>
-            <section id="hero" class="section">
-                <div class="hero-content">
-                    <div class="hero-image-placeholder">Imagem Principal / Banner</div>
-                    <div class="hero-text">
-                        <h1>Título Incrível do Jogo</h1>
-                        <p>Descrição curta sobre o que o jogador vai encontrar.</p>
-                        <button id="btn-jogar-agora" class="btn-primary">JOGAR AGORA</button>
-                    </div>
-                </div>
-            </section>
-
-            <section id="hands-on" class="section bg-light">
-                <h2>Hands On</h2>
-                <div class="carousel-container">
-                    <button id="btn-prev" class="carousel-btn">❮</button>
-                    <div class="carousel-content">
-                        <div id="carousel-img" class="box-placeholder">Imagem Hands On</div>
-                        <div class="carousel-text">
-                            <h3 id="carousel-title">Característica 1</h3>
-                            <p id="carousel-desc">Texto explicativo da imagem atual. A cada clique, este texto e a imagem mudam.</p>
-                        </div>
-                    </div>
-                    <button id="btn-next" class="carousel-btn">❯</button>
-                </div>
-            </section>
-
-            <section id="personagens" class="section">
-                <h2>Personagens</h2>
-                <div class="grid-3">
-                    <div class="card">
-                        <div class="box-placeholder square"></div>
-                        <h3>Personagem 1</h3>
-                        <p>Descrição do personagem.</p>
-                    </div>
-                    <div class="card">
-                        <div class="box-placeholder square"></div>
-                        <h3>Personagem 2</h3>
-                        <p>Descrição do personagem.</p>
-                    </div>
-                    <div class="card">
-                        <div class="box-placeholder square"></div>
-                        <h3>Personagem 3</h3>
-                        <p>Descrição do personagem.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="avaliacoes" class="section bg-light">
-                <h2>Avaliações</h2>
-                <div class="grid-3">
-                    <div class="review-card">
-                        <div class="avatar"></div>
-                        <p>"Muito bom, recomendo demais!"</p>
-                        <div class="stars">★★★★★</div>
-                    </div>
-                    <div class="review-card">
-                        <div class="avatar"></div>
-                        <p>"Jogabilidade incrível."</p>
-                        <div class="stars">★★★★☆</div>
-                    </div>
-                    <div class="review-card">
-                        <div class="avatar"></div>
-                        <p>"Amei os personagens."</p>
-                        <div class="stars">★★★★★</div>
-                    </div>
-                </div>
-            </section>
-        </main>
+    <header class="header">
+    <div class="logo">
+        <img
+        src="logo.png"
+        alt="Logo do jogo"
+        />
     </div>
 
-    <div id="tela-jogo" style="display: none;">
-        <header class="main-header">
-            <div class="header-container">
-                <h2>Área do Jogo</h2>
-                <button class="btn-secondary" onclick="voltarParaHome()">Voltar para Home</button>
-            </div>
-        </header>
-        <div class="game-container">
-            <div class="game-screen">
-                <h2>PLAY</h2>
-                <p>(Aqui entra o iframe ou canvas do jogo)</p>
-            </div>
-            <div class="game-controls">
-                <h3>Controles</h3>
-                <div class="controls-layout">
-                    <div class="d-pad-placeholder">🕹️ Use as setas ou W A S D</div>
-                    <ul class="controls-list">
-                        <li><strong>Espaço:</strong> Pular</li>
-                        <li><strong>Enter:</strong> Confirmar</li>
-                        <li><strong>ESC:</strong> Pausa</li>
-                    </ul>
-                </div>
-            </div>
+    <nav class="nav">
+        <a href="#home" class="nav-btn active">Home</a>
+        <a href="#infos" class="nav-btn">Informações</a>
+        <a href="#feedback" class="nav-btn">Feedback</a>
+        <a href="#jogo" class="nav-btn destaque">Jogo</a>
+    </nav>
+    </header>
+
+    <main>
+    <section id="home" class="hero section">
+        <div class="hero-image">
+        <img
+            src="fotojogo.png"
+            alt="Imagem do jogo"
+        />
         </div>
-    </div>
 
-    <div id="modal-cadastro" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="fecharModal('modal-cadastro')">&times;</span>
-            <h2>Quem é você?</h2>
-            <form id="form-cadastro">
-                <input type="text" placeholder="Nome" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="WhatsApp" required>
-                <button type="submit" class="btn-primary w-100">JOGAR</button>
-            </form>
+        <div class="hero-text">
+        <h1>Bem-vindo ao universo do jogo</h1>
+        <p>
+            Aqui você encontra informações principais sobre o jogo, seus
+            personagens, o modo hands on, avaliações e um espaço para enviar seu
+            feedback.
+        </p>
+        <p>
+            Substitua esse texto pela história, proposta e detalhes do seu jogo.
+        </p>
+
+        <a href="#jogo" class="btn-primary">Jogar novamente</a>
         </div>
-    </div>
+    </section>
 
-    <div id="modal-feedback" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="fecharModal('modal-feedback')">&times;</span>
-            <h2>Deixe seu Feedback</h2>
-            <form id="form-feedback">
-                <input type="text" placeholder="Assunto" required>
-                <textarea rows="4" placeholder="Sua mensagem..." required></textarea>
-                <button type="submit" class="btn-primary w-100">Enviar</button>
-            </form>
+    <section id="jogo" class="game-highlight section">
+        <h2>Jogo</h2>
+        <div class="game-box">
+        <div class="game-video">
+            <img
+            src="fotofase.png"
+            alt="Área do jogo"
+            />
         </div>
+
+        <div class="game-info">
+            <h3>Descrição do jogo</h3>
+            <p>
+            Cooque aqui a explicação do jogo, objetivo, mecânicas principais
+            e o que torna ele especial.
+            </p>
+            <p>
+            Esse espaço também pode ser usado para falar sobre a jogabilidade,
+            missão principal ou enredo.
+            </p>
+
+            <a href="#home" class="btn-primary">Jogar novamente</a>
+        </div>
+        </div>
+    </section>
+
+    <section id="infos" class="section hands-on">
+        <h2>Hands On</h2>
+        <p>
+        Vai compor outras coisas
+        </p>
+
+        <a href="#jogo" class="btn-primary">Jogar novamente</a>
+    </section>
+
+    <section id="personagens" class="section characters">
+        <h2>Personagens</h2>
+
+        <div class="character-grid">
+        <article class="character-card">
+            <img
+            src="https://via.placeholder.com/300x300?text=Personagem+1"
+            alt="Personagem 1"
+            />
+            <h3>Personagem 1</h3>
+            <p>
+            Breve descrição sobre o personagem, sua função e importância na
+            história.
+            </p>
+        </article>
+
+        <article class="character-card">
+            <img
+            src="https://via.placeholder.com/300x300?text=Personagem+2"
+            alt="Personagem 2"
+            />
+            <h3>Personagem 2</h3>
+            <p>
+            Breve descrição sobre o personagem, suas habilidades e
+            personalidade.
+            </p>
+        </article>
+
+        <article class="character-card">
+            <img
+            src="https://via.placeholder.com/300x300?text=Personagem+3"
+            alt="Personagem 3"
+            />
+            <h3>Personagem 3</h3>
+            <p>
+            Breve descrição sobre o personagem, sua história e papel no jogo.
+            </p>
+        </article>
+        </div>
+
+        <a href="#jogo" class="btn-primary">Jogar novamente</a>
+    </section>
+
+    <section class="section reviews">
+        <h2>Avaliações</h2>
+        <p>Veja o que outras pessoas já disseram sobre o jogo.</p>
+
+        <div class="review-list" id="reviewList">
+        <article class="review-card">
+            <h3>Ana</h3>
+            <div class="stars">★★★★★</div>
+            <p>“Gostei muito da ideia e da apresentação do jogo.”</p>
+        </article>
+
+        <article class="review-card">
+            <h3>Lucas</h3>
+            <div class="stars">★★★★☆</div>
+            <p>
+            “A parte visual ficou muito boa e o conteúdo está organizado.”
+            </p>
+        </article>
+
+        <article class="review-card">
+            <h3>Marina</h3>
+            <div class="stars">★★★★★</div>
+            <p>“Achei o jogo interessante e fácil de entender.”</p>
+        </article>
+        </div>
+    </section>
+
+    <section id="feedback" class="section feedback">
+        <h2>Deixe seu feedback</h2>
+
+        <form class="feedback-form" id="feedbackForm">
+        <input type="text" id="name" placeholder="Seu nome" required />
+        <input type="email" id="email" placeholder="Seu e-mail" required />
+        <textarea
+            id="message"
+            rows="5"
+            placeholder="Escreva seu feedback..."
+            required
+        ></textarea>
+        <button type="submit" class="btn-primary">Enviar feedback</button>
+        </form>
+
+        <p id="formMessage" class="form-message"></p>
+    </section>
+    </main>
+
+    <footer class="footer">
+    <div>
+        <h3>Sobre o criador</h3>
+        <p>Nome do criador do jogo e do site.</p>
     </div>
 
-    <script src="main.js"></script>
+    <div>
+        <h3>Informações</h3>
+        <p>
+        Projeto desenvolvido para apresentação, portfólio ou trabalho
+        acadêmico.
+        </p>
+    </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
