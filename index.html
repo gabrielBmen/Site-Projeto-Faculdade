@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Site do Jogo</title>
+    <title>Site do Cyber Blaster</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="image/logo.png">
 </head>
 <body>
     <header class="header">
     <div class="logo">
         <img
-        src="logo.png"
+        src="image/logo.png"
         alt="Logo do jogo"
         />
     </div>
 
     <nav class="nav">
-        <a href="#home" class="nav-btn active">Home</a>
-        <a href="#infos" class="nav-btn">Informações</a>
-        <a href="#feedback" class="nav-btn">Feedback</a>
-        <a href="#jogo" class="nav-btn destaque">Jogo</a>
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="informacoes.html" class="nav-btn">Informações</a>
+        <a href="index.html#feedback" class="nav-btn">Feedback</a>
+        <a href="jogo.html" class="nav-btn destaque">Jogo</a>
     </nav>
     </header>
 
@@ -27,23 +28,20 @@
     <section id="home" class="hero section">
         <div class="hero-image">
         <img
-            src="fotojogo.png"
+            src="image/fotojogo.png"
             alt="Imagem do jogo"
         />
         </div>
 
         <div class="hero-text">
-        <h1>Bem-vindo ao universo do jogo</h1>
+        <h1>Bem-vindo ao Cyber Blaster</h1>
         <p>
             Aqui você encontra informações principais sobre o jogo, seus
-            personagens, o modo hands on, avaliações e um espaço para enviar seu
+            personagens, avaliações e um espaço para enviar seu
             feedback.
         </p>
-        <p>
-            Substitua esse texto pela história, proposta e detalhes do seu jogo.
-        </p>
 
-        <a href="#jogo" class="btn-primary">Jogar novamente</a>
+        <a href="jogo.html" class="btn-primary">Jogar</a>
         </div>
     </section>
 
@@ -52,7 +50,7 @@
         <div class="game-box">
         <div class="game-video">
             <img
-            src="fotofase.png"
+            src="image/fotofase.png"
             alt="Área do jogo"
             />
         </div>
@@ -60,26 +58,11 @@
         <div class="game-info">
             <h3>Descrição do jogo</h3>
             <p>
-            Cooque aqui a explicação do jogo, objetivo, mecânicas principais
-            e o que torna ele especial.
+            O jogo é um Action Platformer 2D com temática cyberpunk, onde o jogador controla um personagem equipado com um canhão de plasma. O objetivo é avançar por fases desafiadoras, enfrentando inimigos robóticos para salvar a cidade de uma ameaça tecnológica.
             </p>
-            <p>
-            Esse espaço também pode ser usado para falar sobre a jogabilidade,
-            missão principal ou enredo.
-            </p>
-
-            <a href="#home" class="btn-primary">Jogar novamente</a>
+            <a href="jogo.html" class="btn-primary">Jogar</a>
         </div>
         </div>
-    </section>
-
-    <section id="infos" class="section hands-on">
-        <h2>Hands On</h2>
-        <p>
-        Vai compor outras coisas
-        </p>
-
-        <a href="#jogo" class="btn-primary">Jogar novamente</a>
     </section>
 
     <section id="personagens" class="section characters">
@@ -88,41 +71,39 @@
         <div class="character-grid">
         <article class="character-card">
             <img
-            src="https://via.placeholder.com/300x300?text=Personagem+1"
+            src="image/personagem.png"
             alt="Personagem 1"
             />
             <h3>Personagem 1</h3>
             <p>
-            Breve descrição sobre o personagem, sua função e importância na
-            história.
+            Personagem principal do jogo, um herói corajoso com habilidades de combate e um canhão de plasma poderoso. Ele é determinado a salvar a cidade e derrotar os inimigos robóticos.
             </p>
         </article>
 
         <article class="character-card">
             <img
-            src="https://via.placeholder.com/300x300?text=Personagem+2"
+            src="image/boss1.png"
             alt="Personagem 2"
             />
             <h3>Personagem 2</h3>
             <p>
-            Breve descrição sobre o personagem, suas habilidades e
-            personalidade.
+            O primeiro chefe do jogo, um robô gigante com armamento pesado e ataques devastadores. Ele é o guardião da primeira fase e representa um grande desafio para o jogador.
             </p>
         </article>
 
         <article class="character-card">
             <img
-            src="https://via.placeholder.com/300x300?text=Personagem+3"
+            src="image/boss2.png"
             alt="Personagem 3"
             />
             <h3>Personagem 3</h3>
             <p>
-            Breve descrição sobre o personagem, sua história e papel no jogo.
+            O segundo chefe do jogo, um robô gigante com armamento pesado, mas também irmão mais velhor do primeiro chefe, onde ele comanda todos os robôs para destruir. Ele é o guardião da fase final e é o maior desafio do jogo.
             </p>
         </article>
         </div>
 
-        <a href="#jogo" class="btn-primary">Jogar novamente</a>
+        <a href="jogo.html" class="btn-primary">Jogar</a>
     </section>
 
     <section class="section reviews">
@@ -174,14 +155,13 @@
     <footer class="footer">
     <div>
         <h3>Sobre o criador</h3>
-        <p>Nome do criador do jogo e do site.</p>
+        <p>Gabriel Barreto Men</p>
     </div>
 
     <div>
         <h3>Informações</h3>
         <p>
-        Projeto desenvolvido para apresentação, portfólio ou trabalho
-        acadêmico.
+        Projeto desenvolvido para apresentação.
         </p>
     </div>
     </footer>
