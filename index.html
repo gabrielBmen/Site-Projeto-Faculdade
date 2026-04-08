@@ -9,59 +9,64 @@
 </head>
 <body>
     <header class="header">
-    <div class="logo">
-        <img
-        src="image/logo.png"
-        alt="Logo do jogo"
-        />
-    </div>
-
-    <nav class="nav">
-        <a href="index.html" class="nav-btn">Home</a>
-        <a href="informacoes.html" class="nav-btn">Informações</a>
-        <a href="index.html#feedback" class="nav-btn">Feedback</a>
-        <a href="jogo.html" class="nav-btn destaque">Jogo</a>
-    </nav>
+        <div class="logo">
+            <img src="image/logo.png" alt="Logo do jogo" />
+        </div>
+    
+        <nav class="nav">
+            <a href="index.html" class="nav-btn active">Home</a>
+            <a href="informacoes.html" class="nav-btn">Informações</a>
+            <a href="index.html#feedback" class="nav-btn">Feedback</a>
+            
+            <button id="themeBtn" class="nav-btn">Tema Claro</button>
+            
+            <a href="jogo.html" class="nav-btn destaque">Jogo</a>
+        </nav>
     </header>
 
     <main>
     <section id="home" class="hero section">
         <div class="hero-image">
-        <img
-            src="image/fotojogo.png"
-            alt="Imagem do jogo"
-        />
+            <img src="image/fotojogo.png" alt="Imagem do jogo" />
         </div>
 
         <div class="hero-text">
-        <h1>Bem-vindo ao Cyber Blaster</h1>
-        <p>
-            Aqui você encontra informações principais sobre o jogo, seus
-            personagens, avaliações e um espaço para enviar seu
-            feedback.
-        </p>
-
-        <a href="jogo.html" class="btn-primary">Jogar</a>
+            <h1>Bem-vindo ao Cyber Blaster</h1>
+            <p>Aqui você encontra informações principais sobre o jogo, seus personagens, avaliações e um espaço para enviar seu feedback.</p>
+            
+            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2);">
+                <p style="margin-bottom: 5px; font-weight: bold;">Identifique-se, jogador:</p>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="greetInput" placeholder="Seu nome" class="custom-input" />
+                    <button id="greetBtn" class="btn-primary" style="margin-top: 0; padding: 10px 20px;">Entrar</button>
+                </div>
+                <p id="greetMessage" style="margin-top: 10px; font-weight: bold; min-height: 24px;"></p>
+            </div>
         </div>
     </section>
 
     <section id="jogo" class="game-highlight section">
         <h2>Jogo</h2>
         <div class="game-box">
-        <div class="game-video">
-            <img
-            src="image/fotofase.png"
-            alt="Área do jogo"
-            />
+            <div class="game-video">
+                <img src="image/fotofase.png" alt="Área do jogo" />
+            </div>
+            <div class="game-info">
+                <h3>Descrição do jogo</h3>
+                <p>O jogo é um Action Platformer 2D com temática cyberpunk, onde o jogador controla um personagem equipado com um canhão de plasma. O objetivo é avançar por fases desafiadoras, enfrentando inimigos robóticos para salvar a cidade de uma ameaça tecnológica.</p>
+                <a href="jogo.html" class="btn-primary">Jogar</a>
+            </div>
         </div>
+    </section>
 
-        <div class="game-info">
-            <h3>Descrição do jogo</h3>
-            <p>
-            O jogo é um Action Platformer 2D com temática cyberpunk, onde o jogador controla um personagem equipado com um canhão de plasma. O objetivo é avançar por fases desafiadoras, enfrentando inimigos robóticos para salvar a cidade de uma ameaça tecnológica.
-            </p>
-            <a href="jogo.html" class="btn-primary">Jogar</a>
-        </div>
+    <section class="section">
+        <h2>Ficha Técnica</h2>
+        <div class="game-info" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <p><strong>Nome:</strong> <span id="info-title">...</span></p>
+            <p><strong>Gênero:</strong> <span id="info-genre">...</span></p>
+            <p><strong>Desenvolvedor:</strong> <span id="info-dev">...</span></p>
+            <p><strong>Ano de Lançamento:</strong> <span id="info-year">...</span></p>
+            <p><strong>Motor (Engine):</strong> <span id="info-engine">...</span></p>
         </div>
     </section>
 
@@ -69,103 +74,78 @@
         <h2>Personagens</h2>
 
         <div class="character-grid">
-        <article class="character-card">
-            <img
-            src="image/personagem.png"
-            alt="Personagem 1"
-            />
-            <h3>Personagem 1</h3>
-            <p>
-            Personagem principal do jogo, um herói corajoso com habilidades de combate e um canhão de plasma poderoso. Ele é determinado a salvar a cidade e derrotar os inimigos robóticos.
-            </p>
-        </article>
+            <article class="character-card">
+                <img src="image/personagem.png" alt="Personagem 1" />
+                <h3>Personagem 1</h3>
+                <p>Personagem principal do jogo, um herói corajoso com habilidades de combate e um canhão de plasma poderoso. Ele é determinado a salvar a cidade e derrotar os inimigos robóticos.</p>
+            </article>
 
-        <article class="character-card">
-            <img
-            src="image/boss1.png"
-            alt="Personagem 2"
-            />
-            <h3>Personagem 2</h3>
-            <p>
-            O primeiro chefe do jogo, um robô gigante com armamento pesado e ataques devastadores. Ele é o guardião da primeira fase e representa um grande desafio para o jogador.
-            </p>
-        </article>
+            <article class="character-card">
+                <img src="image/boss1.png" alt="Personagem 2" />
+                <h3>Personagem 2</h3>
+                <p>O primeiro chefe do jogo, um robô gigante com armamento pesado e ataques devastadores. Ele é o guardião da primeira fase e representa um grande desafio para o jogador.</p>
+            </article>
 
-        <article class="character-card">
-            <img
-            src="image/boss2.png"
-            alt="Personagem 3"
-            />
-            <h3>Personagem 3</h3>
-            <p>
-            O segundo chefe do jogo, um robô gigante com armamento pesado, mas também irmão mais velhor do primeiro chefe, onde ele comanda todos os robôs para destruir. Ele é o guardião da fase final e é o maior desafio do jogo.
-            </p>
-        </article>
+            <article class="character-card">
+                <div id="sensitive-content" style="filter: blur(15px); transition: filter 0.5s ease;">
+                    <img src="image/boss2.png" alt="Personagem 3" />
+                    <h3 style="color: red;">Boss Secreto</h3>
+                    <p>O irmão mais velho do primeiro chefe, comandante de todos os robôs. Extremamente violento e classificado como conteúdo sensível (+18).</p>
+                </div>
+                <p id="blur-warning" style="margin-top: 10px; font-size: 0.8rem; color: #ffb703;">*Clique em "Verificar +18" no topo para revelar.*</p>
+            </article>
         </div>
-
-        <a href="jogo.html" class="btn-primary">Jogar</a>
     </section>
 
     <section class="section reviews">
         <h2>Avaliações</h2>
         <p>Veja o que outras pessoas já disseram sobre o jogo.</p>
-
         <div class="review-list" id="reviewList">
-        <article class="review-card">
-            <h3>Ana</h3>
-            <div class="stars">★★★★★</div>
-            <p>“Gostei muito da ideia e da apresentação do jogo.”</p>
-        </article>
-
-        <article class="review-card">
-            <h3>Lucas</h3>
-            <div class="stars">★★★★☆</div>
-            <p>
-            “A parte visual ficou muito boa e o conteúdo está organizado.”
-            </p>
-        </article>
-
-        <article class="review-card">
-            <h3>Marina</h3>
-            <div class="stars">★★★★★</div>
-            <p>“Achei o jogo interessante e fácil de entender.”</p>
-        </article>
+            <article class="review-card">
+                <h3>Ana</h3>
+                <div class="stars">★★★★★</div>
+                <p>“Gostei muito da ideia e da apresentação do jogo.”</p>
+            </article>
+            <article class="review-card">
+                <h3>Lucas</h3>
+                <div class="stars">★★★★☆</div>
+                <p>“A parte visual ficou muito boa e o conteúdo está organizado.”</p>
+            </article>
+            <article class="review-card">
+                <h3>Marina</h3>
+                <div class="stars">★★★★★</div>
+                <p>“Achei o jogo interessante e fácil de entender.”</p>
+            </article>
         </div>
     </section>
 
     <section id="feedback" class="section feedback">
         <h2>Deixe seu feedback</h2>
-
         <form class="feedback-form" id="feedbackForm">
-        <input type="text" id="name" placeholder="Seu nome" required />
-        <input type="email" id="email" placeholder="Seu e-mail" required />
-        <textarea
-            id="message"
-            rows="5"
-            placeholder="Escreva seu feedback..."
-            required
-        ></textarea>
-        <button type="submit" class="btn-primary">Enviar feedback</button>
+            <input type="text" id="name" placeholder="Seu nome" required />
+            <input type="email" id="email" placeholder="Seu e-mail" required />
+            <textarea id="message" rows="5" placeholder="Escreva seu feedback..." required></textarea>
+            <button type="submit" class="btn-primary">Enviar feedback</button>
         </form>
-
         <p id="formMessage" class="form-message"></p>
     </section>
     </main>
 
     <footer class="footer">
-    <div>
-        <h3>Sobre o criador</h3>
-        <p>Gabriel Barreto Men</p>
-    </div>
-
-    <div>
-        <h3>Informações</h3>
-        <p>
-        Projeto desenvolvido para apresentação.
-        </p>
-    </div>
+        <div>
+            <h3>Sobre o criador</h3>
+            <p>Gabriel Barreto Men</p>
+        </div>
+        <div>
+            <h3>Informações</h3>
+            <p>Projeto desenvolvido para apresentação.</p>
+        </div>
+        <div>
+            <h3>Controle de Conteúdo</h3>
+            <button id="checkAgeBtn" class="btn-primary" style="background: #ff4444; border: none; padding: 10px 20px;">Alterar Idade</button>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

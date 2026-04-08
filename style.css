@@ -289,3 +289,114 @@ a {
     font-size: 0.95rem;
   }
 }
+/* ====================================================
+   NOVAS ADIÇÕES: Inputs e Light Mode (Tech Forge)
+   ==================================================== */
+   .custom-input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(10, 13, 25, 0.75);
+    color: #fff;
+    outline: none;
+  }
+  
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+  
+  /* Regras do Light Mode */
+  body.light-mode {
+    background: linear-gradient(180deg, #f0f4f8, #c6d3e1);
+    color: #0b0e18;
+  }
+  
+  body.light-mode .header {
+    background: rgba(240, 244, 248, 0.92);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
+  
+  body.light-mode .nav-btn {
+    color: #0b0e18;
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  body.light-mode .nav-btn:hover,
+  body.light-mode .nav-btn.active {
+    background: #0066ff;
+    color: #fff;
+  }
+  
+  body.light-mode .hero-text,
+  body.light-mode .game-info,
+  body.light-mode .feedback-form,
+  body.light-mode .review-card,
+  body.light-mode .character-card,
+  body.light-mode .game-box {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #0b0e18;
+  }
+  
+  body.light-mode p,
+  body.light-mode h1,
+  body.light-mode h2,
+  body.light-mode h3 {
+    color: #101424;
+  }
+  
+  body.light-mode .custom-input,
+  body.light-mode .feedback-form input,
+  body.light-mode .feedback-form textarea {
+    background: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+  }
+  
+  body.light-mode .footer {
+    background: #e2e8f0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  /* ====================================================
+   Layout Lado a Lado (Avaliações e Feedback)
+   ==================================================== */
+.reviews-feedback-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Modificamos a review-list para ficar em 1 coluna quando estiver lado a lado */
+.reviews-col .review-list {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 18px;
+  max-height: 400px; /* Define um tamanho máximo */
+  overflow-y: auto;  /* Adiciona rolagem se tiver muitos comentários */
+  padding-right: 10px;
+  margin-top: 20px;
+}
+
+/* Personalizando a barra de rolagem (opcional, fica mais bonito) */
+.reviews-col .review-list::-webkit-scrollbar {
+  width: 8px;
+}
+.reviews-col .review-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.reviews-col .review-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+/* Responsividade: Volta a ficar um embaixo do outro no celular */
+@media (max-width: 900px) {
+  .reviews-feedback-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -219,3 +219,50 @@ a {
     min-height: 360px;
   }
 }
+
+/* ====================================================
+   Regras do Light Mode para manter o tema nas outras páginas
+   ==================================================== */
+   body.light-mode {
+    background: linear-gradient(180deg, #f0f4f8, #c6d3e1);
+    color: #0b0e18;
+  }
+  
+  body.light-mode .header {
+    background: rgba(240, 244, 248, 0.92);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
+  
+  body.light-mode .nav-btn {
+    color: #0b0e18;
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  body.light-mode .nav-btn:hover,
+  body.light-mode .nav-btn.active {
+    background: #0066ff;
+    color: #fff;
+  }
+  
+  /* Elementos com fundo translúcido (caixas, textos, cards) */
+  body.light-mode .hero-content,
+  body.light-mode .story-card,
+  body.light-mode .game-hero-text,
+  body.light-mode .game-placeholder,
+  body.light-mode .info-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #0b0e18;
+  }
+  
+  body.light-mode p,
+  body.light-mode h1,
+  body.light-mode h2,
+  body.light-mode h3 {
+    color: #101424;
+  }
+  
+  body.light-mode .footer {
+    background: #e2e8f0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
