@@ -1,6 +1,3 @@
-// =========================================================
-// REQUISITO 7: Verificação Automatizada de Lançamento
-// =========================================================
 const paginaHome = document.getElementById("home");
 
 // O alerta só vai aparecer se a "paginaHome" existir na tela atual
@@ -13,17 +10,12 @@ if (paginaHome) {
     }
 }
 
-// =========================================================
-// REQUISITO 1: Manipulação de Dados Estáticos (5 variáveis)
-// =========================================================
 const jogoNome = "Cyber Blaster: Neon Origins";
 const jogoGenero = "Action Platformer 2D / Metroidvania";
 const jogoDesenvolvedor = "Gabriel Barreto Men";
 const jogoAno = 2026;
 const jogoEngine = "HTML5 / JavaScript DOM";
 
-// Injetando no HTML
-// Usamos o operador de encadeamento opcional (?) para evitar erros se estiver em páginas que não tem a ficha
 if(document.getElementById("info-title")) {
     document.getElementById("info-title").textContent = jogoNome;
     document.getElementById("info-genre").textContent = jogoGenero;
@@ -32,9 +24,6 @@ if(document.getElementById("info-title")) {
     document.getElementById("info-engine").textContent = jogoEngine;
 }
 
-// =========================================================
-// REQUISITO 2, 3 e 4: Prompt, Condicional e Blur
-// =========================================================
 const btnIdade = document.getElementById("checkAgeBtn");
 const bossSecreto = document.getElementById("sensitive-content");
 const avisoBlur = document.getElementById("blur-warning");
@@ -87,9 +76,6 @@ if (btnIdade) {
         realizarVerificacaoIdade(true);
     });
 }
-// =========================================================
-// REQUISITO 5: Interatividade com Input de Texto (Saudação)
-// =========================================================
 const greetInput = document.getElementById("greetInput");
 const greetBtn = document.getElementById("greetBtn");
 const greetMessage = document.getElementById("greetMessage");
@@ -107,9 +93,6 @@ if (greetBtn) {
     });
 }
 
-// =========================================================
-// REQUISITO 6: Alternância de Tema (Light/Dark Mode)
-// =========================================================
 const themeBtn = document.getElementById("themeBtn");
 
 // 1. Verifica a "memória" do navegador ao carregar a página
@@ -143,9 +126,6 @@ if (themeBtn) {
     });
 }
 
-// =========================================================
-// COMPORTAMENTOS ORIGINAIS MANTIDOS
-// =========================================================
 const navButtons = document.querySelectorAll(".nav-btn:not(#themeBtn):not(#checkAgeBtn)");
 navButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -175,9 +155,6 @@ if (feedbackForm) {
       formMessage.style.color = "#8bff9c";
       feedbackForm.reset();
     });
-    // =========================================================
-// REQUISITO: Avaliações Dinâmicas e Feedback
-// =========================================================
 const toggleBtn = document.getElementById("toggleModeBtn");
 const formTitle = document.getElementById("formTitle");
 const messageField = document.getElementById("message");
