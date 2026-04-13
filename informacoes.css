@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -5,17 +6,21 @@
   scroll-behavior: smooth;
 }
 
+/* BODY */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(180deg, #101424, #1a2037);
+  background: radial-gradient(circle at top, #1a2037, #0c0f1f);
   color: #fff;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
+/* LINKS */
 a {
   text-decoration: none;
 }
 
+/* HEADER */
 .header {
   position: sticky;
   top: 0;
@@ -24,46 +29,54 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 24px;
-  background: rgba(10, 13, 25, 0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 28px;
+
+  background: rgba(10, 13, 25, 0.85);
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(0, 102, 255, 0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
 .logo img {
-  display: block;
   height: 60px;
-  width: auto;
 }
 
+/* NAV */
 .nav {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
 .nav-btn {
-  padding: 10px 18px;
+  padding: 10px 20px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
   font-weight: 700;
-  transition: 0.3s ease;
+
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+
   border: 1px solid transparent;
+
+  transition: all 0.3s ease;
 }
 
+/* HOVER NAV */
 .nav-btn:hover,
 .nav-btn.active {
-  background: #2f4fff83;
-  color: #fff;
+  background: rgba(0, 102, 255, 0.25);
+  box-shadow: 0 0 12px rgba(0, 102, 255, 0.6);
   transform: translateY(-2px);
 }
 
+/* BOTÃO JOGO */
 .nav-btn.destaque {
-  background: linear-gradient(135deg, #d80202, #cf5300);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, #ff2a2a, #ff6a00);
+  box-shadow: 0 0 15px rgba(255, 80, 0, 0.6);
 }
 
+/* HERO */
 .page-hero,
 .story-section {
   width: min(1200px, calc(100% - 32px));
@@ -71,72 +84,102 @@ a {
 }
 
 .page-hero {
-  padding: 70px 0 30px 0;
+  padding: 80px 0 40px;
 }
 
+/* CAIXAS (GLASS + GLOW) */
 .hero-content,
 .story-card,
 .footer {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(8px);
-}
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 102, 255, 0.15);
+  backdrop-filter: blur(10px);
 
-.hero-content {
-  border-radius: 22px;
-  padding: 32px;
-}
+  box-shadow:
+    0 0 0px transparent,
+    0 10px 30px rgba(0, 0, 0, 0.4);
 
-.hero-content h1 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  margin-bottom: 14px;
-  line-height: 1.1;
-}
-
-.hero-content p,
-.story-card p {
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 14px;
-}
-
-.story-section {
-  display: grid;
-  gap: 22px;
-  padding-bottom: 70px;
-}
-
-.story-card {
-  border-radius: 22px;
-  padding: 28px;
-}
-
-.story-card h2 {
-  font-size: 1.8rem;
-  margin-bottom: 14px;
-}
-
-.btn-primary {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 14px 26px;
-  border-radius: 999px;
-  font-weight: 800;
-  color: #fff;
-  background: linear-gradient(135deg, #0066ff, #001b44);
-  box-shadow: 0 12px 28px rgba(101, 46, 255, 0.28);
   transition: 0.3s ease;
 }
 
-.btn-primary:hover {
-  transform: translateY(-3px) scale(1.02);
+/* EFEITO HOVER NOS CARDS */
+.story-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  border: 1px solid rgba(0, 102, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
 }
 
-.footer {
+.hero-content {
+  border-radius: 24px;
+  padding: 36px;
+}
+
+/* TITULOS */
+.hero-content h1 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  margin-bottom: 14px;
+
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* TEXTO */
+.hero-content p,
+.story-card p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 14px;
+}
+
+/* GRID */
+.story-section {
+  display: grid;
+  gap: 24px;
+  padding-bottom: 80px;
+}
+
+/* CARDS */
+.story-card {
+  border-radius: 24px;
+  padding: 30px;
+}
+
+.story-card h2 {
+  font-size: 1.9rem;
+  margin-bottom: 12px;
+  color: #00c6ff;
+}
+
+/* BOTÃO */
+.btn-primary {
+  display: inline-block;
   margin-top: 20px;
-  padding: 28px 24px;
-  background: #0b0e18;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 28px;
+  border-radius: 999px;
+
+  font-weight: 800;
+  color: #fff;
+
+  background: linear-gradient(135deg, #0066ff, #00c6ff);
+
+  box-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
+
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 102, 255, 0.9);
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 30px;
+  padding: 30px 24px;
+
+  background: #0a0d18;
+  border-top: 1px solid rgba(0, 102, 255, 0.2);
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
@@ -144,9 +187,10 @@ a {
 
 .footer h3 {
   margin-bottom: 8px;
-  color: #006cd1;
+  color: #00c6ff;
 }
 
+/* RESPONSIVO */
 @media (max-width: 900px) {
   .header {
     flex-direction: column;
@@ -163,14 +207,9 @@ a {
 }
 
 @media (max-width: 600px) {
-  .page-hero,
-  .story-section {
-    width: min(100% - 20px, 1200px);
-  }
-
   .hero-content,
   .story-card {
-    padding: 20px;
+    padding: 22px;
   }
 
   .nav-btn {
@@ -179,49 +218,26 @@ a {
   }
 }
 
-/* ====================================================
-   Regras do Light Mode para manter o tema nas outras páginas
-   ==================================================== */
-   body.light-mode {
-    background: linear-gradient(180deg, #f0f4f8, #c6d3e1);
-    color: #0b0e18;
-  }
-  
-  body.light-mode .header {
-    background: rgba(240, 244, 248, 0.92);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  }
-  
-  body.light-mode .nav-btn {
-    color: #0b0e18;
-    background: rgba(0, 0, 0, 0.05);
-  }
-  
-  body.light-mode .nav-btn:hover,
-  body.light-mode .nav-btn.active {
-    background: #0066ff;
-    color: #fff;
-  }
-  
-  /* Elementos com fundo translúcido (caixas, textos, cards) */
-  body.light-mode .hero-content,
-  body.light-mode .story-card,
-  body.light-mode .game-hero-text,
-  body.light-mode .game-placeholder,
-  body.light-mode .info-card {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #0b0e18;
-  }
-  
-  body.light-mode p,
-  body.light-mode h1,
-  body.light-mode h2,
-  body.light-mode h3 {
-    color: #101424;
-  }
-  
-  body.light-mode .footer {
-    background: #e2e8f0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-  }
+/* LIGHT MODE MELHORADO */
+body.light-mode {
+  background: linear-gradient(180deg, #eef3f8, #cfd9e6);
+  color: #0b0e18;
+}
+
+body.light-mode .header {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+body.light-mode .hero-content,
+body.light-mode .story-card {
+  background: rgba(255, 255, 255, 0.8);
+  color: #0b0e18;
+}
+
+body.light-mode .story-card h2 {
+  color: #0066ff;
+}
+
+body.light-mode .footer {
+  background: #e2e8f0;
+}

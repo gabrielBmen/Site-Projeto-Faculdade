@@ -178,51 +178,89 @@ if (feedbackForm) {
     // =========================================================
 // REQUISITO: Avaliações Dinâmicas e Feedback
 // =========================================================
+const toggleBtn = document.getElementById("toggleModeBtn");
+const formTitle = document.getElementById("formTitle");
+const messageField = document.getElementById("message");
+const ratingField = document.getElementById("rating");
+
+let modo = "feedback"; // feedback ou avaliacao
+
+// Alternar modo
+if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+
+        if (modo === "feedback") {
+            modo = "avaliacao";
+
+            formTitle.textContent = "Deixe sua avaliação";
+            toggleBtn.textContent = "Mudar para Feedback";
+
+            messageField.style.display = "none";
+            ratingField.style.display = "block";
+
+        } else {
+            modo = "feedback";
+
+            formTitle.textContent = "Deixe seu feedback";
+            toggleBtn.textContent = "Mudar para Avaliação";
+
+            messageField.style.display = "block";
+            ratingField.style.display = "none";
+        }
+    });
+}
+
+// ENVIO DO FORM
 const feedbackForm = document.getElementById("feedbackForm");
-const formMessage = document.getElementById("formMessage");
 const reviewList = document.getElementById("reviewList");
+const formMessage = document.getElementById("formMessage");
 
 if (feedbackForm) {
     feedbackForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+        e.preventDefault();
 
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
 
-      if (!name || !email || !message) {
-        formMessage.textContent = "Preencha todos os campos para enviar o feedback.";
-        formMessage.style.color = "#ff6b6b";
-        return;
-      }
+        if (!name || !email) {
+            formMessage.textContent = "Preencha todos os campos.";
+            formMessage.style.color = "#ff6b6b";
+            return;
+        }
 
-      // 1. Cria um novo elemento (cartão de avaliação)
-      const novaAvaliacao = document.createElement("article");
-      novaAvaliacao.classList.add("review-card");
+        // MODO AVALIAÇÃO
+        if (modo === "avaliacao") {
+            const rating = ratingField.value;
 
-      // 2. Preenche o conteúdo HTML do cartão
-      novaAvaliacao.innerHTML = `
-          <h3>${name}</h3>
-          <div class="stars">★★★★★</div>
-          <p>“${message}”</p>
-      `;
+            const novaAvaliacao = document.createElement("article");
+            novaAvaliacao.classList.add("review-card");
 
-      // 3. Adiciona a nova avaliação no topo da lista (prepend)
-      if (reviewList) {
-          reviewList.prepend(novaAvaliacao);
-      }
+            novaAvaliacao.innerHTML = `
+                <h3>${name}</h3>
+                <div class="stars">${rating}</div>
+                <p>“Avaliação enviada com sucesso!”</p>
+            `;
 
-      // 4. Mensagem de sucesso
-      formMessage.textContent = `Obrigado, ${name}! Sua avaliação foi publicada com sucesso.`;
-      formMessage.style.color = "#8bff9c";
-      
-      // 5. Limpa o formulário
-      feedbackForm.reset();
-      
-      // Remove a mensagem de sucesso depois de 4 segundos
-      setTimeout(() => {
-          formMessage.textContent = "";
-      }, 4000);
+            reviewList.prepend(novaAvaliacao);
+
+            formMessage.textContent = "Avaliação publicada!";
+        }
+
+        // MODO FEEDBACK
+        else {
+            const message = messageField.value.trim();
+
+            if (!message) {
+                formMessage.textContent = "Escreva um feedback.";
+                formMessage.style.color = "#ff6b6b";
+                return;
+            }
+
+            formMessage.textContent = "Feedback enviado com sucesso!";
+        }
+
+        formMessage.style.color = "#8bff9c";
+        feedbackForm.reset();
     });
 }
 
